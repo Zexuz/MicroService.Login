@@ -86,19 +86,5 @@ namespace MicroService.Login.Repo.Sql.Services.Implementation
             var user = await _userRepository.FindByIdAsync(userId);
             return user.EmailVerified;
         }
-
-        public async Task<bool> ChangeBalance(int userId, int ammount, IDbTransaction transaction)
-        {
-            var user = await _userRepository.FindByIdAsync(userId, transaction);
-            user.Balance += ammount;
-            return await _userRepository.UpdateAsync(user, transaction);
-        }
-
-        public async Task<bool> AddDomainAsync(int userId, int verifiedDomainId, IDbTransaction transaction)
-        {
-            var user = await _userRepository.FindByIdAsync(userId);
-            user.DomainId = verifiedDomainId;
-            return await _userRepository.UpdateAsync(user, transaction);
-        }
     }
 }

@@ -21,7 +21,7 @@ namespace MicroService.Login.Repo.Test
 
     public class UserRepoTest : IClassFixture<UserRepoTestFixture>
     {
-        private UserRepository _userRepo;
+        private readonly UserRepository _userRepo;
 
         public UserRepoTest(UserRepoTestFixture databaseFixture)
         {

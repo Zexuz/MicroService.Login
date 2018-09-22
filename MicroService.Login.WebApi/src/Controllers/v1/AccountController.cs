@@ -24,7 +24,7 @@ namespace MicroService.Login.WebApi.Controllers.v1
         private readonly IUserService                   _userService;
         private readonly IEmailService                  _emailService;
         private readonly ITokenValidationService        _tokenValidationService;
-        private          string                         _baseUrl;
+        private readonly string                         _baseUrl;
         private readonly ITwoFactorAuthenticatorManager _twoFactorAuthenticatorManager;
         private readonly IJsonWebTokenService           _jsonWebTokenService;
 

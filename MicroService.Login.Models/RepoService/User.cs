@@ -13,9 +13,6 @@ namespace MicroService.Login.Models.RepoService
         public string         TwoFactorSecret { get; set; }
         public Role           Role            { get; set; }
         public bool           EmailVerified   { get; set; }
-        public int            Balance         { get; set; }
         public bool           IsSuspended     { get; set; }
-        public int?           DomainId        { get; set; }
-        public int            TierId          { get; set; }
     }
 }

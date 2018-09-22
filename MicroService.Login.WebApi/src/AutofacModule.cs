@@ -9,7 +9,6 @@ using MicroService.Common.Core.Managers;
 using MicroService.Common.Core.Services.impl;
 using MicroService.Common.Core.Services.Interfaces;
 using MicroService.Common.Core.Web;
-using MicroService.Login.Repo.MongoDb;
 using MicroService.Login.Repo.Sql.Repositories.Implementation;
 using MicroService.Login.Repo.Sql.Repositories.Interfaces;
 using MicroService.Login.Repo.Sql.Services.Implementation;
@@ -42,11 +41,7 @@ namespace MicroService.Login.WebApi
             builder.RegisterType<HashService>().As<IHashService>();
             builder.RegisterType<EmailService>().As<IEmailService>();
             builder.RegisterType<TokenValidationService>().As<ITokenValidationService>();
-            builder.RegisterType<DomainVerificationService>().As<IDomainVerificationService>();
-            builder.RegisterType<TransactionService>().As<ITransactionService>();
-            builder.RegisterType<TransactionLookupService>().As<ITransactionLookupService>();
             builder.RegisterType<UserLookupService>().As<IUserLookupService>();
-            builder.RegisterType<FeeService>().As<IFeeService>();
 
             builder.Register(c => new GmailSenderService(new GmailSettings(gmailAppPassword, gamilUsername))).As<IEmailSenderService>();
 
@@ -74,8 +69,6 @@ namespace MicroService.Login.WebApi
 
             builder.RegisterGeneric(typeof(MongoRepository<,>)).As(typeof(IRepository<,>));
 
-            builder.RegisterType<DomainScraperRepositoryService>().As<IDomainScraperRepositoryService>();
-
             #endregion
 
             #region Managers
@@ -99,19 +92,11 @@ namespace MicroService.Login.WebApi
             builder.RegisterType<WhitelistedIpRepository>().As<IWhitelistedIpRepository>();
             builder.RegisterType<LoginAttemptRepository>().As<ILoginAttemptRepository>();
             builder.RegisterType<RefreshTokenRepository>().As<IRefreshTokenRepository>();
-            builder.RegisterType<VerifiedDomainUserRepository>().As<IVerifiedDomainUserRepository>();
-            builder.RegisterType<TransactionRepository>().As<ITransactionRepository>();
-            builder.RegisterType<ReviewRepository>().As<IReviewRepository>();
-            builder.RegisterType<TierRepository>().As<ITierRepository>();
 
             builder.RegisterType<UserRepositoryService>().As<IUserRepositoryService>();
             builder.RegisterType<WhitelistedIpRepositoryService>().As<IWhitelistedIpRepositoryService>();
             builder.RegisterType<LoginAttemptsRepositoryService>().As<ILoginAttemptsRepositoryService>();
             builder.RegisterType<RefreshTokenRepositoryService>().As<IRefreshTokenRepositoryService>();
-            builder.RegisterType<VerifiedDomainUserRepositoryService>().As<IVerifiedDomainUserRepositoryService>();
-            builder.RegisterType<TransactionRepositoryService>().As<ITransactionRepositoryService>();
-            builder.RegisterType<ReviewRepositoryService>().As<IReviewRepositoryService>();
-            builder.RegisterType<TierRepositoryService>().As<ITierRepositoryService>();
 
             #endregion
         }
