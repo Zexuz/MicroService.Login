@@ -24,8 +24,8 @@ namespace MicroService.Login.Webapi.Test
 {
     public class AccountControllerTest
     {
-        private IUserService      _userService;
-        private AccountController _accountController;
+        private readonly IUserService      _userService;
+        private readonly AccountController _accountController;
 
         public AccountControllerTest()
         {

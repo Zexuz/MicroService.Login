@@ -19,7 +19,5 @@ namespace MicroService.Login.Repo.Sql.Services.Interfaces
         Task<bool>       DisableTwoFactorForUserAsync(int userId);
         Task<bool>       ChangeEmailVerifiedStatus(int userId, bool status);
         Task<bool>       HasVerifiedEmailAsync(int userId);
-        Task<bool>       ChangeBalance(int userId, int ammount, IDbTransaction transaction);
-        Task<bool>       AddDomainAsync(int userId, int verifiedDomainId, IDbTransaction transaction);
     }
 }

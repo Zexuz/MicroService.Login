@@ -21,10 +21,7 @@ namespace MicroService.Login.Repo
                 Username = user.Username,
                 TwoFactorSecret = user.TwoFactorSecret,
                 EmailVerified = user.EmailVerified,
-                Balance = user.Balance,
-                DomainId = user.DomainId,
                 IsSuspended = user.IsSuspended,
-                TierId = user.TierId
             };
         }
 
@@ -44,10 +41,7 @@ namespace MicroService.Login.Repo
                 Username = user.Username,
                 TwoFactorSecret = user.TwoFactorSecret,
                 EmailVerified = user.EmailVerified,
-                Balance = user.Balance,
-                DomainId = user.DomainId,
                 IsSuspended = user.IsSuspended,
-                TierId = user.TierId
             };
         }
 
@@ -159,104 +153,6 @@ namespace MicroService.Login.Repo
                 Valid = refreshToken.Valid,
                 Value = refreshToken.Value,
                 LastUsed = refreshToken.LastUsed
-            };
-        }
-
-        public static Repo.Sql.Models.SqlVerifiedDomainUser ToDatabase(this VerifiedDomainUser verifiedDomainUser)
-        {
-            if (verifiedDomainUser == null)
-                return null;
-
-            return new Repo.Sql.Models.SqlVerifiedDomainUser
-            {
-                AllowDeposit = verifiedDomainUser.AllowDeposit,
-                Created = verifiedDomainUser.Created,
-                Description = verifiedDomainUser.Description,
-                Id = verifiedDomainUser.Id,
-                OwnerId = verifiedDomainUser.OwnerId,
-                WebsiteUrl = verifiedDomainUser.WebsiteUrl,
-                LastUpdated = verifiedDomainUser.LastUpdated
-            };
-        }
-
-        public static VerifiedDomainUser FromDatabase(this Repo.Sql.Models.SqlVerifiedDomainUser verifiedDomainUser)
-        {
-            if (verifiedDomainUser == null)
-                return null;
-
-            return new VerifiedDomainUser
-            {
-                AllowDeposit = verifiedDomainUser.AllowDeposit,
-                Created = verifiedDomainUser.Created,
-                Description = verifiedDomainUser.Description,
-                Id = verifiedDomainUser.Id,
-                OwnerId = verifiedDomainUser.OwnerId,
-                WebsiteUrl = verifiedDomainUser.WebsiteUrl,
-                LastUpdated = verifiedDomainUser.LastUpdated
-            };
-        }
-
-        public static Repo.Sql.Models.SqlTransaction ToDatabase(this Transaction transaction)
-        {
-            if (transaction == null)
-                return null;
-
-            return new Repo.Sql.Models.SqlTransaction
-            {
-                Created = transaction.Created,
-                Fee = transaction.Fee,
-                FromUser = transaction.FromUserId,
-                ToUser = transaction.ToUserId,
-                Id = transaction.Id,
-                NrOfCoins = transaction.NrOfCoins
-            };
-        }
-
-        public static Transaction FromDatabase(this Repo.Sql.Models.SqlTransaction transaction)
-        {
-            if (transaction == null)
-                return null;
-
-            return new Transaction
-            {
-                Created = transaction.Created,
-                Fee = transaction.Fee,
-                FromUserId = transaction.FromUser,
-                ToUserId = transaction.ToUser,
-                Id = transaction.Id,
-                NrOfCoins = transaction.NrOfCoins
-            };
-        }
-
-        public static Repo.Sql.Models.SqlReview ToDatabase(this Review review)
-        {
-            if (review == null)
-                return null;
-
-            return new Repo.Sql.Models.SqlReview
-            {
-                Id = review.Id,
-                IsPositive = review.IsPositive,
-                Text = review.Text,
-                Updated = review.Updated,
-                UserId = review.UserId,
-                Valid = review.Valid,
-            };
-        }
-
-        public static Review FromDatabase(this Repo.Sql.Models.SqlReview review)
-        {
-            if (review == null)
-                return null;
-
-            return new Review
-            {
-                Id = review.Id,
-                IsPositive = review.IsPositive,
-                Text = review.Text,
-                Updated = review.Updated,
-                UserId = review.UserId,
-                Valid = review.Valid,
             };
         }
     }

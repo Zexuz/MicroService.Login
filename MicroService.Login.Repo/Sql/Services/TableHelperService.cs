@@ -18,16 +18,11 @@ namespace MicroService.Login.Repo.Sql.Services
             if (await _tableHelper.DoesDatabaseExists(databaseName))
                 await _tableHelper.DropDatabase(databaseName);
             
-            await _tableHelper.ValidateTableExists(new TierTable(), databaseName);
             await _tableHelper.ValidateTableExists(new UserTable(), databaseName);
             await _tableHelper.ValidateTableExists(new WhitelistedIpTable(), databaseName);
             await _tableHelper.ValidateTableExists(new RefreshTokenTable(), databaseName);
             await _tableHelper.ValidateTableExists(new LoginAttemtTable(), databaseName);
-            await _tableHelper.ValidateTableExists(new TransactionTable(), databaseName);
-            await _tableHelper.ValidateTableExists(new ReviewTable(), databaseName);
-            await _tableHelper.ValidateTableExists(new VerifiedDomainUserTable(), databaseName);
 
-            await _tableHelper.AddConstrainst(new UserTable(), databaseName);
         }
     }
 }

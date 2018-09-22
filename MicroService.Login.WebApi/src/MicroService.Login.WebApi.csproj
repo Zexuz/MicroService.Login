@@ -15,7 +15,7 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
     <PackageReference Include="JWT" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
-    <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="2.0.0"/>
+    <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="2.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="2.3.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.4.1" />
   </ItemGroup>
@@ -23,11 +23,11 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Attributes"/>
+    <Folder Include="Attributes" />
     <Folder Include="Exceptions" />
-    <Folder Include="Policies"/>
+    <Folder Include="Policies" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MicroService.Login.Security\MicroService.Login.Security.csproj"/>
+    <ProjectReference Include="..\..\MicroService.Login.Security\MicroService.Login.Security.csproj" />
   </ItemGroup>
 </Project>

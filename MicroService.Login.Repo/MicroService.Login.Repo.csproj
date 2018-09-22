@@ -3,7 +3,10 @@
         <TargetFramework>netcoreapp2.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\MicroService.Common\MicroService.Common.Core\MicroService.Common.Core.csproj"/>
-        <ProjectReference Include="..\MicroService.Login.Models\MicroService.Login.Models.csproj"/>
+        <ProjectReference Include="..\..\MicroService.Common\MicroService.Common.Core\MicroService.Common.Core.csproj" />
+        <ProjectReference Include="..\MicroService.Login.Models\MicroService.Login.Models.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="MongoDb\Models" />
     </ItemGroup>
 </Project>

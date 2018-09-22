@@ -4,7 +4,6 @@
     {
         User,
         Suppport,
-        VerifiedDomainUser,
         Admin,
     }
 }
