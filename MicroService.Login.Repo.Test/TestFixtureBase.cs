@@ -6,7 +6,7 @@ namespace MicroService.Login.Repo.Test
 {
     public abstract class TestFixtureBase : IDisposable
     {
-        private readonly string _connectionStringMaster;
+        private readonly   string _connectionStringMaster;
         protected abstract string Database { get; }
 
         protected string ConnectionString => $"Server=localhost;Database={Database};Trusted_Connection=True;";

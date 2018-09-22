@@ -1,10 +1,11 @@
 ﻿using MicroService.Common.Core.Databases.Repository.MsSql.Interfaces;
 using System.Runtime.CompilerServices;
-[assembly:InternalsVisibleTo("MicroService.Login.Repo.Test")]
+
+[assembly: InternalsVisibleTo("MicroService.Login.Repo.Test")]
 
 namespace MicroService.Login.Repo.Sql.Tables
 {
-    internal class UserTable:ITable
+    internal class UserTable : ITable
     {
         public string TableName => "User";
 
@@ -25,6 +26,5 @@ namespace MicroService.Login.Repo.Sql.Tables
                             CREATE UNIQUE INDEX Users_Username_uindex                    ON {0}.dbo.[User] (Username)
                             CREATE UNIQUE NONCLUSTERED INDEX User_TwoFactorSecret_uindex ON {0}.dbo.[User] (TwoFactorSecret) WHERE TwoFactorSecret IS NOT NULL
 ";
-
     }
 }

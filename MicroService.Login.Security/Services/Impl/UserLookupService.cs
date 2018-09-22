@@ -8,7 +8,7 @@ namespace MicroService.Login.Security.Services.Impl
 {
     public class UserLookupService : IUserLookupService
     {
-        private readonly IUserRepositoryService               _userRepositoryService;
+        private readonly IUserRepositoryService _userRepositoryService;
 
         public UserLookupService(IUserRepositoryService userRepositoryService)
         {

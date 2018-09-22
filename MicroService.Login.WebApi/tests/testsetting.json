@@ -1,7 +1,7 @@
 ﻿{
-  "Hosting": {
-    "Domain": "localhost",
-    "Port": "5000",
-    "Scheme": "http"
-  }
+    "Hosting": {
+        "Domain": "localhost",
+        "Port": "5000",
+        "Scheme": "http"
+    }
 }
